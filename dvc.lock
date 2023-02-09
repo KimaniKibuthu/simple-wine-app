@@ -32,3 +32,15 @@ stages:
     - path: data\processed\train_winequality.csv
       md5: a3879e70543e5dddfd7e34945f6cd199
       size: 74931
+  train_and_evaluate:
+    cmd: python src\train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data\processed\test_winequality.csv
+      md5: e6aefdde9454af54cb4b886dd669e534
+      size: 18813
+    - path: data\processed\train_winequality.csv
+      md5: a3879e70543e5dddfd7e34945f6cd199
+      size: 74931
+    - path: src\get_data.py
+      md5: 16231377b50796b68989fbcb31d0213e
+      size: 596
